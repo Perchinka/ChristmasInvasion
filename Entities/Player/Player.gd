@@ -3,7 +3,7 @@ extends CharacterBody2D
 @onready var visuals = $Visuals
 @onready var sprite: AnimatedSprite2D = $Visuals/AnimatedSprite2D
 @onready var run_particles = $Visuals/RunParticles
-@onready var weapon: Weapon = $Visuals/WeaponHolder/Weapon
+@onready var weapon: WeaponHolder = $Visuals/WeaponHolder
 
 @export var speed := 300.0
 @export var acceleration := 2000.0
@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 	apply_gravity(delta)
 
 	if Input.is_action_pressed("shoot"):
-		weapon.fire()
+		weapon.fire_weapon()
 
 	update_animation()
 	move_and_slide()

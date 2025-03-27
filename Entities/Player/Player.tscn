@@ -1,8 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://8r8snsm6r2r2"]
+[gd_scene load_steps=17 format=3 uid="uid://8r8snsm6r2r2"]
 
 [ext_resource type="Texture2D" uid="uid://da5hhhvlgow8f" path="res://Assets/sprites/DeadMoroz.png" id="1_20n3d"]
 [ext_resource type="Script" path="res://Entities/Player/Player.gd" id="1_ygh1i"]
-[ext_resource type="PackedScene" uid="uid://6utt41h4hn77" path="res://Entities/Weapon/Weapon.tscn" id="2_ighyn"]
+[ext_resource type="Script" path="res://Entities/Weapon/WeaponHolder.gd" id="2_350tg"]
+[ext_resource type="PackedScene" uid="uid://mmsew8rbev0a" path="res://Entities/Weapon/Weapons/CandyShot.tscn" id="3_vbvsy"]
+[ext_resource type="PackedScene" uid="uid://cmeu7b5r0ujw" path="res://Entities/Weapon/Weapons/PieGun.tscn" id="4_gqw4g"]
 
 [sub_resource type="Curve" id="Curve_ssaja"]
 _data = [Vector2(0.0351562, 0.0684038), 0.0, 0.0, 0, 0, Vector2(0.300781, 0.206026), 0.0, 0.0, 0, 0, Vector2(0.707031, 0.0684038), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0906392, 0.0, 0, 0]
@@ -93,8 +95,8 @@ script = ExtResource("1_ygh1i")
 [node name="WeaponHolder" type="Node2D" parent="Visuals"]
 position = Vector2(11, 5)
 scale = Vector2(0.8, 0.8)
-
-[node name="Weapon" parent="Visuals/WeaponHolder" instance=ExtResource("2_ighyn")]
+script = ExtResource("2_350tg")
+weapon_scenes = Array[PackedScene]([ExtResource("3_vbvsy"), ExtResource("4_gqw4g")])
 
 [node name="RunParticles" type="GPUParticles2D" parent="Visuals"]
 show_behind_parent = true

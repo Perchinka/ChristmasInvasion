@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="WeaponData" load_steps=3 format=3 uid="uid://c1hr0het4phtk"]
 
-[ext_resource type="PackedScene" uid="uid://bpfm2tm1vuexa" path="res://Entities/Weapon/Projectiles/BowlingBall.tscn" id="1_pboeu"]
+[ext_resource type="PackedScene" uid="uid://bpfm2tm1vuexa" path="res://Entities/Weapon/Projectiles/Bullet.tscn" id="1_pboeu"]
 [ext_resource type="Script" path="res://Entities/Weapon/WeaponData.gd" id="1_xu083"]
 
 [resource]
