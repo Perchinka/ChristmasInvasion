@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://6utt41h4hn77"]
+
+[ext_resource type="Texture2D" uid="uid://beplq027gntf7" path="res://Assets/sprites/CandyShot.png" id="1_tef7g"]
+[ext_resource type="Script" path="res://Entities/Weapon/Weapon.gd" id="1_xx7wk"]
+[ext_resource type="Resource" uid="uid://c1hr0het4phtk" path="res://Entities/Weapon/Weapons/CandyShot.tres" id="2_6x33h"]
+
+[node name="Weapon" type="Node2D" node_paths=PackedStringArray("sprite", "muzzle")]
+show_behind_parent = true
+script = ExtResource("1_xx7wk")
+weapon_data = ExtResource("2_6x33h")
+sprite = NodePath("Sprite")
+muzzle = NodePath("Muzzle")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.05, 0.05)
+texture = ExtResource("1_tef7g")
+
+[node name="Muzzle" type="Marker2D" parent="."]
+position = Vector2(9, -4)

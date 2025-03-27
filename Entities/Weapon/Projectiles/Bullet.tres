@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ProjectileData" load_steps=2 format=3 uid="uid://b6rkcpl7d13j7"]
+
+[ext_resource type="Script" path="res://Entities/Weapon/ProjectileData.gd" id="1_604m6"]
+
+[resource]
+script = ExtResource("1_604m6")
+damage = 2
+speed = 600.0
+has_lifetime = false
+lifetime = 10.0
+gravity_scale = 0.0
+splash_radius = 0.0
+bounces = 0

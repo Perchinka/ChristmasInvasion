@@ -1,0 +1,121 @@
+[gd_scene load_steps=15 format=3 uid="uid://8r8snsm6r2r2"]
+
+[ext_resource type="Texture2D" uid="uid://da5hhhvlgow8f" path="res://Assets/sprites/DeadMoroz.png" id="1_20n3d"]
+[ext_resource type="Script" path="res://Entities/Player/Player.gd" id="1_ygh1i"]
+[ext_resource type="PackedScene" uid="uid://6utt41h4hn77" path="res://Entities/Weapon/Weapon.tscn" id="2_ighyn"]
+
+[sub_resource type="Curve" id="Curve_ssaja"]
+_data = [Vector2(0.0351562, 0.0684038), 0.0, 0.0, 0, 0, Vector2(0.300781, 0.206026), 0.0, 0.0, 0, 0, Vector2(0.707031, 0.0684038), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0906392, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_js1ua"]
+curve = SubResource("Curve_ssaja")
+
+[sub_resource type="Curve" id="Curve_sybjk"]
+_data = [Vector2(0, 0.28013), 0.0, 2.14939, 0, 0, Vector2(0.191406, 0.661238), 0.508143, 0.508143, 0, 0, Vector2(0.75, 0.957655), 0.0, 0.0, 0, 0, Vector2(1, 0.79886), -2.38302, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ci0h5"]
+curve = SubResource("Curve_sybjk")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_485t4"]
+lifetime_randomness = 0.45
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 1.9
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+inherit_velocity_ratio = 0.042
+direction = Vector3(0, -1, 0)
+spread = 28.521
+initial_velocity_min = 168.14
+initial_velocity_max = 346.77
+gravity = Vector3(0, 1, 0)
+scale_min = 7.08
+scale_max = 12.08
+scale_curve = SubResource("CurveTexture_ci0h5")
+alpha_curve = SubResource("CurveTexture_js1ua")
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
+turbulence_enabled = true
+turbulence_noise_strength = 0.73
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c8vq"]
+atlas = ExtResource("1_20n3d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lo1tv"]
+atlas = ExtResource("1_20n3d")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebcag"]
+atlas = ExtResource("1_20n3d")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vyl45"]
+atlas = ExtResource("1_20n3d")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_utpbl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1c8vq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lo1tv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebcag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vyl45")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhpse"]
+size = Vector2(12, 15)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_ygh1i")
+
+[node name="Visuals" type="Node2D" parent="."]
+
+[node name="WeaponHolder" type="Node2D" parent="Visuals"]
+position = Vector2(11, 5)
+scale = Vector2(0.8, 0.8)
+
+[node name="Weapon" parent="Visuals/WeaponHolder" instance=ExtResource("2_ighyn")]
+
+[node name="RunParticles" type="GPUParticles2D" parent="Visuals"]
+show_behind_parent = true
+position = Vector2(0, 9)
+scale = Vector2(0.0582319, 0.0220106)
+emitting = false
+amount = 300
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_485t4")
+lifetime = 0.4
+randomness = 0.45
+interpolate = false
+collision_base_size = 0.0
+visibility_rect = Rect2(-1920, -1600, 3840, 3024)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals"]
+position = Vector2(0, 1)
+sprite_frames = SubResource("SpriteFrames_utpbl")
+animation = &"idle"
+frame_progress = 0.786443
+
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(0, 2.5)
+shape = SubResource("RectangleShape2D_nhpse")

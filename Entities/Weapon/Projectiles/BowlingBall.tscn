@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpfm2tm1vuexa"]
+
+[ext_resource type="Script" path="res://Entities/Weapon/Projectiles/Bullet.gd" id="1_c5ppl"]
+[ext_resource type="Resource" uid="uid://b6rkcpl7d13j7" path="res://Entities/Weapon/Projectiles/Bullet.tres" id="2_018fd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4do16"]
+
+[sub_resource type="Gradient" id="Gradient_mcs04"]
+colors = PackedColorArray(0.798536, 0.795483, 7.70092e-07, 1, 0.8, 0.796078, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_02f2s"]
+gradient = SubResource("Gradient_mcs04")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tfwve"]
+
+[node name="Bullet" type="RigidBody2D"]
+scale = Vector2(0.354643, 0.21787)
+script = ExtResource("1_c5ppl")
+projectile_data = ExtResource("2_018fd")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(20, 20)
+mesh = SubResource("SphereMesh_4do16")
+texture = SubResource("GradientTexture1D_02f2s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tfwve")
+debug_color = Color(5.19812e-06, 0.578456, 0.809759, 0.42)

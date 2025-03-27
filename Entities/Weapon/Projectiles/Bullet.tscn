@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=3 uid="uid://dde3d0vbye0xk"]
+
+[ext_resource type="Script" path="res://Entities/Weapon/Projectiles/BowlingBall.gd" id="1_u1qj6"]
+[ext_resource type="Resource" uid="uid://bqjiuigqa6urv" path="res://Entities/Weapon/Projectiles/BowlingBall.tres" id="2_d2hgo"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4do16"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tfwve"]
+
+[node name="BowlingBall" type="RigidBody2D"]
+script = ExtResource("1_u1qj6")
+projectile_data = ExtResource("2_d2hgo")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+scale = Vector2(20, 20)
+mesh = SubResource("SphereMesh_4do16")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_tfwve")
