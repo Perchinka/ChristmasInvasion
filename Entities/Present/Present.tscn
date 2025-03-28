@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ycuq71nlpceb"]
+[gd_scene load_steps=10 format=3 uid="uid://ycuq71nlpceb"]
 
 [ext_resource type="Script" path="res://Entities/Present/Present.gd" id="1_f823h"]
 [ext_resource type="Texture2D" uid="uid://dvn83rj161ifp" path="res://Assets/Sprites/Presents/Present0.png" id="2_5cwgj"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cnk7qro17twdk" path="res://Assets/Sprites/Presents/Present3.png" id="5_evr4j"]
 [ext_resource type="Texture2D" uid="uid://dn7c75ajk14v" path="res://Assets/Sprites/Presents/Present4.png" id="6_ouvfm"]
 [ext_resource type="Texture2D" uid="uid://bhes0ckr1jplo" path="res://Assets/Sprites/Presents/Present5.png" id="7_1kypq"]
+[ext_resource type="PackedScene" uid="uid://2vdbfpuak34y" path="res://Particles/Present/Explosion.tscn" id="8_jaw4d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_02wob"]
 size = Vector2(20, 21.5627)
@@ -17,6 +18,7 @@ collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_f823h")
 skins = Array[Texture2D]([ExtResource("2_5cwgj"), ExtResource("3_f2obe"), ExtResource("4_2vfxv"), ExtResource("5_evr4j"), ExtResource("6_ouvfm"), ExtResource("7_1kypq")])
+explosion_scene = ExtResource("8_jaw4d")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture = ExtResource("2_5cwgj")

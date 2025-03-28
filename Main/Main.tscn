@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dn5q8jpv7r07g"]
+[gd_scene load_steps=7 format=3 uid="uid://dn5q8jpv7r07g"]
 
 [ext_resource type="Script" path="res://Entities/Present/PresentsSpawner.gd" id="1_1m5ue"]
 [ext_resource type="PackedScene" uid="uid://8r8snsm6r2r2" path="res://Entities/Player/Player.tscn" id="1_5btwk"]
 [ext_resource type="PackedScene" uid="uid://ycuq71nlpceb" path="res://Entities/Present/Present.tscn" id="2_a1xvd"]
+[ext_resource type="Script" path="res://Particles/FX.gd" id="3_xlqw5"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_hs44r"]
 size = Vector2(1000, 150)
@@ -18,8 +19,6 @@ position = Vector2(576, 323)
 [node name="World" type="Node2D" parent="."]
 
 [node name="Level1" type="Node" parent="World"]
-
-[node name="FX" type="Node2D" parent="World/Level1"]
 
 [node name="Ground" type="Node" parent="World/Level1"]
 
@@ -166,6 +165,9 @@ position = Vector2(768, 486)
 
 [node name="SpawnPoint7" type="Node2D" parent="World/Level1/PresentsSpawner"]
 position = Vector2(384, 488)
+
+[node name="FX" type="Node2D" parent="World"]
+script = ExtResource("3_xlqw5")
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_5btwk")]
 position = Vector2(384, 224)

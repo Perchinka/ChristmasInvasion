@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://2vdbfpuak34y"]
+
+[ext_resource type="Script" path="res://Particles/Present/Explosion.gd" id="1_7asnl"]
+
+[sub_resource type="Curve" id="Curve_c7t0k"]
+_data = [Vector2(0.0119048, 1), 0.0, 0.0, 0, 0, Vector2(0.428571, 0.604396), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_34sb1"]
+curve = SubResource("Curve_c7t0k")
+
+[sub_resource type="Curve" id="Curve_6pug8"]
+_data = [Vector2(0, 0.989011), 0.0, 0.0, 0, 0, Vector2(0.809524, 0.208791), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1fq7e"]
+curve = SubResource("Curve_6pug8")
+
+[sub_resource type="Curve" id="Curve_d4lfw"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.406593), -1.39709, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_jsucr"]
+curve = SubResource("Curve_d4lfw")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r2uer"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 39.19
+direction = Vector3(0, 0, 0)
+spread = 21.122
+radial_velocity_min = -2.23517e-05
+radial_velocity_max = 125.0
+radial_velocity_curve = SubResource("CurveTexture_1fq7e")
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -2.23517e-06
+radial_accel_max = -2.23517e-06
+tangential_accel_min = -2.23517e-06
+tangential_accel_max = -2.23517e-06
+damping_max = 10.0
+scale_min = 10.0
+scale_max = 23.61
+scale_curve = SubResource("CurveTexture_jsucr")
+color = Color(1, 1, 1, 0.854902)
+alpha_curve = SubResource("CurveTexture_34sb1")
+turbulence_noise_strength = 20.0
+turbulence_noise_scale = 10.0
+turbulence_noise_speed = Vector3(0, 10.105, 0)
+
+[node name="ExplosionParticles" type="GPUParticles2D"]
+show_behind_parent = true
+z_index = 2
+scale = Vector2(0.0582319, 0.0220106)
+emitting = false
+amount = 50
+sub_emitter = NodePath(".")
+process_material = SubResource("ParticleProcessMaterial_r2uer")
+one_shot = true
+explosiveness = 1.0
+randomness = 0.45
+interpolate = false
+collision_base_size = 0.0
+visibility_rect = Rect2(-1920, -1600, 3840, 3024)
+script = ExtResource("1_7asnl")
