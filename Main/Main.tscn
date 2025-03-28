@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn5q8jpv7r07g"]
+[gd_scene load_steps=6 format=3 uid="uid://dn5q8jpv7r07g"]
 
+[ext_resource type="Script" path="res://Entities/Present/PresentsSpawner.gd" id="1_1m5ue"]
 [ext_resource type="PackedScene" uid="uid://8r8snsm6r2r2" path="res://Entities/Player/Player.tscn" id="1_5btwk"]
+[ext_resource type="PackedScene" uid="uid://ycuq71nlpceb" path="res://Entities/Present/Present.tscn" id="2_a1xvd"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_hs44r"]
 size = Vector2(1000, 150)
@@ -19,126 +21,157 @@ position = Vector2(576, 323)
 
 [node name="FX" type="Node2D" parent="World/Level1"]
 
-[node name="Floor" type="StaticBody2D" parent="World/Level1" groups=["ground"]]
+[node name="Ground" type="Node" parent="World/Level1"]
+
+[node name="Floor" type="StaticBody2D" parent="World/Level1/Ground" groups=["ground"]]
 position = Vector2(144, 576)
 scale = Vector2(0.731611, 0.986938)
 collision_layer = 9
 collision_mask = 9
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Floor"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Ground/Floor"]
 mesh = SubResource("QuadMesh_hs44r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Floor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Ground/Floor"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_l4uf1")
 
-[node name="Platform" type="StaticBody2D" parent="World/Level1" groups=["ground"]]
+[node name="Platform" type="StaticBody2D" parent="World/Level1/Ground" groups=["ground"]]
 position = Vector2(576, 351)
 scale = Vector2(0.450856, 0.305456)
 collision_layer = 9
 collision_mask = 9
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Platform"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Ground/Platform"]
 mesh = SubResource("QuadMesh_hs44r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Platform"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Ground/Platform"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_l4uf1")
 
-[node name="Platform2" type="StaticBody2D" parent="World/Level1" groups=["ground"]]
+[node name="Platform2" type="StaticBody2D" parent="World/Level1/Ground" groups=["ground"]]
 position = Vector2(32, 496)
 scale = Vector2(0.450856, 0.785457)
 collision_layer = 9
 collision_mask = 9
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Platform2"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Ground/Platform2"]
 mesh = SubResource("QuadMesh_hs44r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Platform2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Ground/Platform2"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_l4uf1")
 
-[node name="Platform3" type="StaticBody2D" parent="World/Level1" groups=["ground"]]
+[node name="Platform3" type="StaticBody2D" parent="World/Level1/Ground" groups=["ground"]]
 position = Vector2(1120, 496)
 scale = Vector2(0.450856, 0.785457)
 collision_layer = 9
 collision_mask = 9
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Platform3"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Ground/Platform3"]
 mesh = SubResource("QuadMesh_hs44r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Platform3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Ground/Platform3"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_l4uf1")
 
-[node name="Floor2" type="StaticBody2D" parent="World/Level1" groups=["ground"]]
+[node name="Floor2" type="StaticBody2D" parent="World/Level1/Ground" groups=["ground"]]
 position = Vector2(1000, 576)
 scale = Vector2(0.731611, 0.986938)
 collision_layer = 9
 collision_mask = 9
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Floor2"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Ground/Floor2"]
 mesh = SubResource("QuadMesh_hs44r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Floor2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Ground/Floor2"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_l4uf1")
 
-[node name="Celling" type="StaticBody2D" parent="World/Level1" groups=["ground"]]
+[node name="Celling" type="StaticBody2D" parent="World/Level1/Ground" groups=["ground"]]
 position = Vector2(144, 0)
 scale = Vector2(0.731611, 0.986938)
 collision_layer = 9
 collision_mask = 9
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Celling"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Ground/Celling"]
 mesh = SubResource("QuadMesh_hs44r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Celling"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Ground/Celling"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_l4uf1")
 
-[node name="Celling2" type="StaticBody2D" parent="World/Level1" groups=["ground"]]
+[node name="Celling2" type="StaticBody2D" parent="World/Level1/Ground" groups=["ground"]]
 position = Vector2(1000, 0)
 scale = Vector2(0.731611, 0.986938)
 collision_layer = 9
 collision_mask = 9
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Celling2"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Ground/Celling2"]
 mesh = SubResource("QuadMesh_hs44r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Celling2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Ground/Celling2"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_l4uf1")
 
-[node name="Wall" type="StaticBody2D" parent="World/Level1" groups=["ground"]]
+[node name="Wall" type="StaticBody2D" parent="World/Level1/Ground" groups=["ground"]]
 position = Vector2(1208, 288)
 scale = Vector2(0.233668, 4.2819)
 collision_layer = 9
 collision_mask = 9
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Wall"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Ground/Wall"]
 mesh = SubResource("QuadMesh_hs44r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Wall"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Ground/Wall"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_l4uf1")
 
-[node name="Wall2" type="StaticBody2D" parent="World/Level1" groups=["ground"]]
+[node name="Wall2" type="StaticBody2D" parent="World/Level1/Ground" groups=["ground"]]
 position = Vector2(-47.9998, 288)
 scale = Vector2(0.233668, 4.2819)
 collision_layer = 9
 collision_mask = 9
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Wall2"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="World/Level1/Ground/Wall2"]
 mesh = SubResource("QuadMesh_hs44r")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Wall2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Level1/Ground/Wall2"]
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_l4uf1")
+
+[node name="PresentsSpawner" type="Node2D" parent="World/Level1" node_paths=PackedStringArray("spawn_points")]
+script = ExtResource("1_1m5ue")
+max_presents = 1
+spawn_points = [NodePath("SpawnPoint1"), NodePath("SpawnPoint2"), NodePath("SpawnPoint3"), NodePath("SpawnPoint4"), NodePath("SpawnPoint5"), NodePath("SpawnPoint6"), NodePath("SpawnPoint7")]
+present_scene = ExtResource("2_a1xvd")
+
+[node name="SpawnPoint1" type="Node2D" parent="World/Level1/PresentsSpawner"]
+position = Vector2(144, 421)
+
+[node name="SpawnPoint2" type="Node2D" parent="World/Level1/PresentsSpawner"]
+position = Vector2(576, 312)
+
+[node name="SpawnPoint3" type="Node2D" parent="World/Level1/PresentsSpawner"]
+position = Vector2(368, 312)
+
+[node name="SpawnPoint4" type="Node2D" parent="World/Level1/PresentsSpawner"]
+position = Vector2(784, 312)
+
+[node name="SpawnPoint5" type="Node2D" parent="World/Level1/PresentsSpawner"]
+position = Vector2(1008, 421)
+
+[node name="SpawnPoint6" type="Node2D" parent="World/Level1/PresentsSpawner"]
+position = Vector2(768, 486)
+
+[node name="SpawnPoint7" type="Node2D" parent="World/Level1/PresentsSpawner"]
+position = Vector2(384, 488)
 
 [node name="Player" parent="." groups=["player"] instance=ExtResource("1_5btwk")]
 position = Vector2(384, 224)
 scale = Vector2(3, 3)
+collision_layer = 5
+collision_mask = 5
 speed = 400.0
 acceleration = 3000.0
 air_acceleration = 2000.0
