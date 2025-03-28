@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dde3d0vbye0xk"]
 
-[ext_resource type="Script" path="res://Entities/Weapon/Projectiles/BowlingBall.gd" id="1_u1qj6"]
-[ext_resource type="Resource" uid="uid://bqjiuigqa6urv" path="res://Entities/Weapon/Projectiles/BowlingBall.tres" id="2_d2hgo"]
+[ext_resource type="Script" path="res://Entities/Weapon/Projectiles/BowlingBall/BowlingBall.gd" id="1_u1qj6"]
+[ext_resource type="Resource" uid="uid://bqjiuigqa6urv" path="res://Entities/Weapon/Projectiles/BowlingBall/BowlingBall.tres" id="2_d2hgo"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_4do16"]
 

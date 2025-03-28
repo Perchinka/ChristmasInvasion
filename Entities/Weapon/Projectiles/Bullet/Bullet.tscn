@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bpfm2tm1vuexa"]
 
-[ext_resource type="Script" path="res://Entities/Weapon/Projectiles/Bullet.gd" id="1_c5ppl"]
-[ext_resource type="Resource" uid="uid://b6rkcpl7d13j7" path="res://Entities/Weapon/Projectiles/Bullet.tres" id="2_018fd"]
+[ext_resource type="Script" path="res://Entities/Weapon/Projectiles/Bullet/Bullet.gd" id="1_c5ppl"]
+[ext_resource type="Resource" uid="uid://b6rkcpl7d13j7" path="res://Entities/Weapon/Projectiles/Bullet/Bullet.tres" id="2_018fd"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_4do16"]
 
