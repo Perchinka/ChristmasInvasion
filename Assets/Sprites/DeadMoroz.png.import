@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://da5hhhvlgow8f"
-path="res://.godot/imported/DeadMoroz.png-6cf19d4db3bf9dee56944336cf94ae21.ctex"
+path="res://.godot/imported/DeadMoroz.png-a85359de3996a3ed33394c820bfaebb7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/sprites/DeadMoroz.png"
-dest_files=["res://.godot/imported/DeadMoroz.png-6cf19d4db3bf9dee56944336cf94ae21.ctex"]
+source_file="res://Assets/Sprites/DeadMoroz.png"
+dest_files=["res://.godot/imported/DeadMoroz.png-a85359de3996a3ed33394c820bfaebb7.ctex"]
 
 [params]
 
