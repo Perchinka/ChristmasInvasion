@@ -121,3 +121,4 @@ frame_progress = 0.786443
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2.5)
 shape = SubResource("RectangleShape2D_nhpse")
+one_way_collision = true
