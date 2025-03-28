@@ -16,7 +16,7 @@ extends CharacterBody2D
 @export var low_jump_multiplier := 2.5
 
 @export var coyote_time := 0.15
-@export var jump_buffer_time := 0.1
+@export var jump_buffer_time := 0.1  # full buffer time when on floor
 
 var jump_timer := 0.0
 var coyote_timer := 0.0
@@ -44,19 +44,26 @@ func handle_horizontal_input(delta: float) -> void:
 
 
 func handle_jump_input(delta: float) -> void:
+	if jump_buffer_timer > 0:
+		jump_buffer_timer -= delta
+
 	if is_on_floor():
 		coyote_timer = coyote_time
 	else:
 		coyote_timer -= delta
 
 	if Input.is_action_just_pressed("jump"):
-		jump_buffer_timer = jump_buffer_time
+		if is_on_floor():
+			jump_buffer_timer = 1
+		else:
+			jump_buffer_timer = jump_buffer_time
 
 	if jump_buffer_timer > 0 and coyote_timer > 0:
 		velocity.y = jump_force
 		jump_timer = max_jump_time
 		jump_held = true
 		jump_buffer_timer = 0.0
+
 	elif Input.is_action_just_released("jump"):
 		jump_held = false
 

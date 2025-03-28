@@ -15,7 +15,6 @@ func _ready() -> void:
 
 
 func add_present_score(points: int) -> void:
-	print("Hey")
 	present_score += points
 
 

@@ -181,6 +181,7 @@ jump_force = -800.0
 fall_multiplier = 1.0
 low_jump_multiplier = 2.76
 coyote_time = 0.05
+jump_buffer_time = 0.2
 
 [node name="UI" type="CanvasLayer" parent="."]
 
