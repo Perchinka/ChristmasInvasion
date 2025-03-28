@@ -18,6 +18,5 @@ func _on_body_entered(body: Node2D):
 
 
 func spawn_explosion():
-	var fx_node = get_tree().get_root().get_node("Game/World/FX")
-	if fx_node and explosion_scene:
-		fx_node.instantiate_gpuparticles(explosion_scene, position)
+	if explosion_scene:
+		FX.instantiate_gpuparticles(explosion_scene, position)
