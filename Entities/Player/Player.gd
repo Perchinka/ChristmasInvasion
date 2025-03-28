@@ -16,7 +16,7 @@ extends CharacterBody2D
 @export var low_jump_multiplier := 2.5
 
 @export var coyote_time := 0.15
-@export var jump_buffer_time := 0.1  # full buffer time when on floor
+@export var jump_buffer_time := 0.1
 
 var jump_timer := 0.0
 var coyote_timer := 0.0
