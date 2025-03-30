@@ -101,7 +101,7 @@ weapon_scenes = Array[PackedScene]([ExtResource("3_vbvsy"), ExtResource("4_gqw4g
 [node name="RunParticles" type="GPUParticles2D" parent="Visuals"]
 show_behind_parent = true
 position = Vector2(0, 9)
-scale = Vector2(0.0582319, 0.0220106)
+scale = Vector2(-0.0589735, 0.0294173)
 emitting = false
 amount = 50
 sub_emitter = NodePath(".")

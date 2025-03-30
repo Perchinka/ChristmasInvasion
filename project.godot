@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Game="*res://Main/Game.gd"
 FX="*res://Main/FX.gd"
+HUD="*res://UI/HUD/HUD.gd"
 
 [global_group]
 
